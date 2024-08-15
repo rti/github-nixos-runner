@@ -51,7 +51,7 @@
   in {
     runner = {
       enable = true;
-      name = config.networking.hostName;
+      name = "${config.networking.hostName}-S4wE";
       inherit tokenFile url;
       user = "github-runner";
       group = "docker";
