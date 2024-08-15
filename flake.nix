@@ -94,6 +94,7 @@
 
             tmux select-pane -t 0
             tmux kill-pane
+            tmux select-layout tiled
 
             tmux setw synchronize-panes on
 
