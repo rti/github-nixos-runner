@@ -22,7 +22,7 @@
       };
 
       # ALWAYS sync with machineCount in main.tf
-      machineCount = 5;
+      machineCount = 6;
 
       hostnames = builtins.genList (n: "github-runner-${toString (n+1)}") machineCount;
 

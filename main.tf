@@ -22,7 +22,7 @@ variable "location" {
 
 variable "machineCount" {
   # ALWAYS sync with machineCount in flake.nix
-  default = 5
+  default = 6
 }
 
 provider "hcloud" {
