@@ -24,7 +24,7 @@
       # ALWAYS sync with machineCount in main.tf
       machineCount = 5;
 
-      hostnames = builtins.genList (n: "github-runner-${toString n}") machineCount;
+      hostnames = builtins.genList (n: "github-runner-${toString (n+1)}") machineCount;
 
       mkSystemConfig = hostname: nixpkgs.lib.nixosSystem {
         inherit system;
