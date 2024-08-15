@@ -65,8 +65,9 @@
               server_ip=$(cat "$file")
               server_number=$(echo $file | sed 's/.*-\([0-9]\+\)$/\1/')
               server_name="github-runner-''${server_number}"
-              nixos-anywhere --flake ".#''${server_name}" "root@''${server_ip}"
+              nixos-anywhere --flake ".#''${server_name}" "root@''${server_ip}" &
             done
+            wait
           '')
 
 
@@ -77,8 +78,9 @@
               server_number=$(echo $file | sed 's/.*-\([0-9]\+\)$/\1/')
               server_name="github-runner-''${server_number}"
               nixos-rebuild switch --flake ".#''${server_name}" \
-                --target-host root@"''${server_ip}" --use-substitutes
+                --target-host root@"''${server_ip}" --use-substitutes &
             done
+            wait
           '')
 
           (pkgs.writeShellScriptBin "shell" ''
