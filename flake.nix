@@ -108,9 +108,9 @@
         shellHook = ''
         cat <<EOF
 
-        provision  - buy servers
+        provision  - rent servers from hetzner
         bootstrap  - install nixos and deploy configuration
-        deploy     - redeploy configuration to nixos
+        deploy     - redeploy configuration
         shell      - ssh into machines using tmux
 
         EOF
